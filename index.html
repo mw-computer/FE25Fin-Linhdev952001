@@ -4,89 +4,455 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>웹화면구현:김똘똘-ㅇㅇㅇ클로닝
-		//TODO: 타이틀에 본인 이름 넣기
+	<title>웹화면구현:버칸린-목대공과 클로닝
 	</title>
+
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="icon" href="./images/lo.png">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
+	<!-- header -->
 	<nav>
-		<div class="container">
-			//TODO: 메뉴 완성하기 (상단메뉴바 또는 사이드메뉴바) + 화면 사이즈에 따라 반응형으로 변경되도록 구현하기
-			<ul>
-				<li>
-					<a href="#">메뉴 1</a>
-						<ul>
-							<li><a href="#">서브메뉴 1</a></li>
-							<li><a href="#">서브메뉴 2</a></li>
-							<li><a href="#">서브메뉴 3</a></li>
+		<div class="back_groud">
+			<div class="relative hover_header ">
+				<div class=" flex w-full border-b-[0.1px] border-gray-100 h-16 justify-between items-center px-4">
+					<!-- Logo left -->
+					<div class="logo white_logo ">
+						<img class="h-8 md:h-10 hover:filter hover:brightness-0 hover:invert" src="./images/logo.png"
+							alt="logo">
+					</div>
+					<div class="logo hidden black_logo">
+						<img class="h-8 md:h-10 hover:filter hover:brightness-0 hover:invert" src="./images/black_logo.png"
+							alt="logo">
+					</div>
+
+					<!-- container -->
+					<div>
+						<!-- Desktop Navigation -->
+						<div class="hidden md:block">
+							<ul class="flex items-center align-center">
+								<li class="px-2 menu-item" data-menu="1">
+									<a href="#" class="text-base md:text-[17px] font-medium text">학교안내</a>
+								</li>
+								<li class="mx-2 menu-item" data-menu="2">
+									<a href="#" class="text-base md:text-[17px] font-medium text">교수소개</a>
+								</li>
+								<li class="mx-2 menu-item" data-menu="3">
+									<a href="#" class="text-base md:text-[17px] font-medium text">학사안내</a>
+								</li>
+								<li class="mx-2 menu-item" data-menu="4">
+									<a href="#" class="text-base md:text-[17px] font-medium text">특성화사업</a>
+								</li>
+								<li class="mx-2 menu-item" data-menu="5">
+									<a href="#" class="text-base md:text-[17px] font-medium text">학생황동</a>
+								</li>
+								<li class="mx-2 menu-item" data-menu="6">
+									<a href="#" class="text-base md:text-[17px] font-medium text">커뮤니티</a>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Mobile menu toggle -->
+						<div class="md:hidden cursor-pointer" id="mobile-menu-toggle">
+							<i class="fa-solid fa-bars text-xl text-white"></i>
+						</div>
+
+					</div>
+
+					<!-- right logo -->
+					<div class="hidden md:flex pr-10 text-gray-100 space-x-2">
+						<!-- Desktop right menu -->
+						<div class="text-center space-y-1 cursor-pointer header-menu-item">
+							<a href="#" class="flex flex-col items-center">
+								<i class="fa-regular fa-user text"></i>
+								<p class="text-[10px] text-center text">로그인</p>
+							</a>
+						</div>
+						<div class="text-center space-y-1 ml-2 cursor-pointer header-menu-item">
+							<a href="#" class="flex flex-col items-center">
+								<i class="fa-solid fa-school text"></i>
+								<p class="text-[10px] text-center text">교내사이트</p>
+							</a>
+						</div>
+						<div class="text-center space-y-1 ml-2 mt-2 cursor-pointer header-menu-item">
+							<a href="#" class="flex flex-col items-center">
+								<i class="fa-solid fa-bars text-xl text"></i>
+							</a>
+						</div>
+						<div class="text-center flex mt-2 mx-2 cursor-pointer header-menu-item">
+							<a href="#" class="flex items-center">
+								<p class="text-xl font-medium text">목원</p>
+								<p class="flex items-center">
+									<span class="rounded-full text-md bg-[#d9203a] px-1">뷰</span>
+									<span class="text-xl font-medium text text-[#d9203a]">.</span>
+								</p>
+							</a>
+						</div>
+					</div>
+
+				</div>
+				<div class="bg-gray-200 flex border-t border-gray-300 absolute top-16  w-full menu_container ">
+					<div class="w-1/6 text-center space-y-2 pl-10 bg-white px-4 pt-6 pb-10 border-r border-gray-300 menu-section"
+						data-section="1">
+						<h4 class="text-xl text-left mb-6 menu-title" data-title="1">학교안내</h4>
+						<hr class="border-gray-300">
+						<ul class="text-left space-y-6 text-gray-700 mt-6">
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub01/0101.html">학교소개</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub01/0102.html">연혁</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub01/0103.html">취업과진로</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub01/0104.html">특선화전략</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub01/0105.html">학과시설</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub01/0106.html"> </a>위치 및 연락처</a>
+							</li>
 						</ul>
-				</li>
-				<li>
-					<a href="#">메뉴 2</a>
-						<ul>
-							<li><a href="#">서브메뉴 1</a></li>
-							<li><a href="#">서브메뉴 2</a></li>
-							<li><a href="#">서브메뉴 3</a></li>
+					</div>
+					<div class="w-1/6 text-center space-y-2 bg-white px-4 pt-6 pb-10 border-r border-gray-300 menu-section"
+						data-section="2">
+						<h4 class="text-xl text-left mb-6 menu-title" data-title="2">교수소개</h4>
+						<hr class="border-gray-300">
+						<ul class="text-left space-y-6 text-gray-700 mt-6">
+							<li class="hover:bg-[#d9203a] hover:text-white py-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub02/0201.html">컴퓨터공학과</a>
+								</li>
 						</ul>
-				</li>
-				<li>
-					<a href="#">메뉴 3</a>
-						<ul>
-							<li><a href="#">서브메뉴 1</a></li>
-							<li><a href="#">서브메뉴 2</a></li>
-							<li><a href="#">서브메뉴 3</a></li>
+					</div>
+					<div class="w-1/6 text-center space-y-2 bg-white px-4 pt-6 pb-10 border-r border-gray-300 menu-section"
+						data-section="3">
+						<h4 class="text-xl text-left mb-6 menu-title" data-title="3">학사안내</h4>
+						<hr class="border-gray-300">
+						<ul class="text-left space-y-6 text-gray-700 mt-6">
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub03/0301.html">교과과정</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub03/0302.html">교과목소개</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub03/0303.html">졸업요구조건</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub03/0304.html">학사일정</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub03/0305.html">직무기술서</a>
+							</li>
 						</ul>
-				</li>
-				<li>
-					<a href="#">메뉴 4</a>
-						<ul>
-							<li><a href="#">서브메뉴 1</a></li>
-							<li><a href="#">서브메뉴 2</a></li>
-							<li><a href="#">서브메뉴 3</a></li>
+					</div>
+					<div class="w-1/6 text-center space-y-2 bg-white px-4 pt-6 pb-10 border-r border-gray-300 menu-section"
+						data-section="4">
+						<h4 class="text-xl text-left mb-6 menu-title" data-title="4">특성화사업</h4>
+						<hr class="border-gray-300">
+						<ul class="text-left space-y-6 text-gray-700 mt-6">
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub04/0701.html">SW인재양성사업</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub04/0702.html">SW문인재양성사업 <br>교육과정
+								</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub04/0703.html">IPP 사업안내</a>
+							</li>
 						</ul>
-				</li>
-			</ul>
+					</div>
+					<div class="w-1/6 text-center space-y-2  bg-white px-4 pt-6 pb-10 border-r border-gray-300 menu-section"
+						data-section="5">
+						<h4 class="text-xl text-left mb-6 menu-title" data-title="5">학생활동</h4>
+						<hr class="border-gray-300">
+						<ul class="text-left space-y-6 text-gray-700 mt-6">
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub05/0401.html">학생회</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub05/0402.html">동아리정보</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub05/0403.html">학술제작품</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub05/0404.html">교내외수상</a>
+							</li>
+						</ul>
+					</div>
+					<div class="w-1/6 text-center space-y-2  bg-white px-4 pt-6 pb-10 border-r border-gray-300 menu-section"
+						data-section="6">
+						<h4 class="text-xl text-left mb-6 menu-title" data-title="6">커뮤니티</h4>
+						<hr class="border-gray-300">
+						<ul class="text-left space-y-6 text-gray-700 mt-6">
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub06/0501.html"></a>공지사항</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub06/0502.html">가의자료실</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub06/0503.html">포토갤러리</a>
+							</li>
+							<li class="hover:bg-[#d9203a] hover:text-white py-2 px-2"> <a href="https://www.mokwon.ac.kr/computer/html/sub06/0504.html">홍보동영상</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- 메인 컨테이너 -->
+			<div class="flex justify-center items-center  align-center mt-40">
+				<div>
+					<div class=" text-center ">
+						<strong class="text-xl  text-left mb-6 text-[28px] md:text-[60px] lg:text-[60px] font-[700] text-slate-100">
+							BEYOND YOURSELF ,
+							<br>
+							ONE STEP AJEAD!
+						</strong>
+
+					</div>
+					<!-- Responsive 6 icon menu -->
+					<div class="mt-8 grid grid-cols-3 gap-3 lg:gap-0 md:flex md:h-[160px] md:mt-32">
+						<!-- 1 -->
+						<div class="bg-[rgba(67,84,88,0.5)] hover:bg-[#4261d9] hover:text-white hover:border-[#4261d9] transition-all duration-300 rounded-lg flex flex-col justify-center items-center py-4 md:py-0 md:flex-row md:rounded-none border-r-[0.01px] border-gray-300 lg:w-[130px]">
+							<a href="https://www.mokwon.ac.kr/computer/html/sub01/0106.html" class="flex flex-col items-center w-full">
+								<i class="fa-solid fa-location-dot text-gray-300 text-2xl md:mr-2"></i>
+								<p class="text-white text-xs md:text-sm font-light mt-2">위치 및 연락처</p>
+							</a>
+						</div>
+						<!-- 2 -->
+						<div class="bg-[rgba(67,84,88,0.5)] hover:bg-[#4261d9] hover:text-white hover:border-[#4261d9] transition-all duration-300 rounded-lg flex flex-col justify-center items-center py-4 md:py-0 md:flex-row md:rounded-none border-r-[0.01px] border-gray-300 lg:w-[130px]">
+							<a href="https://www.mokwon.ac.kr/computer/html/sub01/0105.html" class="flex flex-col items-center w-full">
+								<i class="fa-solid fa-school text-xl text-gray-300 md:mr-2"></i>
+								<p class="text-white text-xs md:text-sm font-light mt-2">학교시설</p>
+							</a>
+						</div>
+						<!-- 3 -->
+						<div class="bg-[rgba(67,84,88,0.5)] hover:bg-[#4261d9] hover:text-white hover:border-[#4261d9] transition-all duration-300 rounded-lg flex flex-col justify-center items-center py-4 md:py-0 md:flex-row md:rounded-none border-r-[0.01px] border-gray-300 lg:w-[130px]">
+							<a href="https://www.mokwon.ac.kr/computer/html/sub03/0304.html" class="flex flex-col items-center w-full">
+								<i class="fa-solid fa-calendar-day text-xl text-white md:mr-2"></i>
+								<p class="text-white text-xs md:text-sm font-light mt-2">학사일정</p>
+							</a>
+						</div>
+						<!-- 4 -->
+							<div class="bg-[rgba(67,84,88,0.5)] hover:bg-[#4261d9] hover:text-white hover:border-[#4261d9] transition-all duration-300 rounded-lg flex flex-col justify-center items-center py-4 md:py-0 md:flex-row md:rounded-none border-r-[0.01px] border-gray-300 lg:w-[130px]">
+							<a href="https://www.mokwon.ac.kr/computer/html/sub01/0104.html" class="flex flex-col items-center w-full">
+								<i class="fa-solid fa-lightbulb text-xl text-white md:mr-2"></i>
+								<p class="text-white text-xs md:text-sm font-light mt-2">특성화전략</p>
+							</a>
+						</div>
+						<!-- 5 -->
+						<div class="bg-[rgba(67,84,88,0.5)] hover:bg-[#4261d9] hover:text-white hover:border-[#4261d9] transition-all duration-300 rounded-lg flex flex-col justify-center items-center py-4 md:py-0 md:flex-row md:rounded-none border-r-[0.01px] border-gray-300 lg:w-[130px]">
+							<a href="https://www.mokwon.ac.kr/computer/html/sub04/0402.html" class="flex flex-col items-center w-full">
+								<i class="fa-solid fa-people-roof text-xl text-white md:mr-2"></i>
+								<p class="text-white text-xs md:text-sm font-light mt-2">동아리 정보</p>
+							</a>
+						</div>
+						<!-- 6 -->
+						<div class="bg-[rgba(67,84,88,0.5)] hover:bg-[#4261d9] hover:text-white hover:border-[#4261d9] transition-all duration-300 rounded-lg flex flex-col justify-center items-center py-4 md:py-0 md:flex-row md:rounded-none border-r-[0.01px] border-gray-300 lg:w-[130px]">
+							<a href="https://www.mokwon.ac.kr/computer/html/sub04/0403.html" class="flex flex-col items-center w-full">
+								<i class="fa-solid fa-images text-xl text-white text-center md:mr-2"></i>
+								<p class="text-white text-xs md:text-sm font-light mt-2">학술제작품</p>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 	</nav>
+
 	<main>
-		<div class="container">
-			<h1>웹화면 구현</h1>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
+		<!-- section 1 -->
+		<div class="flex flex-col md:flex-row">
+			<div class="w-full md:w-[60%] pt-16">
+				<div class="flex justify-end flex-col mr-4 md:mr-10 w-full pl-4 md:pl-30 pr-5">
+					<!-- header  -->
+					<div class="flex justify-between items-center w-full pl-4 md:pl-30">
+						<div>
+							<h1 class="text-2xl md:text-3xl font-bold">NEWS</h1>
+						</div>
+						<div>
+							<select class="text-gray-700 w-24 md:w-28 pb-1 border-b-2 border-gray-700">
+								<option value="1">전체소식</option>
+								<option value="2">공지사항</option>
+							</select>
+						</div>
+					</div>
+					<!-- Body -->
+					<div class="flex justify-between items-center w-full pl-4 md:pl-30">
+						<div class="mt-10 overflow-y-auto h-[59vh] w-full">
+							<!-- Card 1 -->
+							<a href="#" class="flex w-full pb-4 md:pb-8 border-b border-gray-300">
+								<!-- left -->
+								<div class="flex-shrink-0">
+									<div class="border-3 border-gray-300 text-center items-center flex flex-col justify-center w-16 md:w-20 h-16 md:h-20">
+										<h1 class="text-2xl md:text-3xl font-bold">27</h1>
+										<h2 class="text-xs md:text-sm font-light">2025 05</h2>
+									</div>
+								</div>
+								<!-- right -->
+								<div class="ml-4 md:ml-8">
+									<h1 class="text-sm md:text-md font-bold"><span class="text-blue-700">공지사항</span> [1~4학년 대상] 실전 역량 점검! PCSQL 코딩테스트 안내 </h1>
+									<p class="text-xs md:text-sm font-light line-clamp-2">컴퓨터공학과 재학생 여러분!! 자신의 코딩 실력을 점검하고 성장의 발판을 마련할 수 있는 프로그래머스의 PCSQL（MySQL or Oracle) 코딩테스트를 무료로 선착순 50명 접수하여 실시하오니, 전 학년 학생들의 많은 참여 바랍니다.</p>
+								</div>
+							</a>
+							<!-- Card 2 -->
+							<a href="#" class="flex w-full pb-4 md:pb-8 border-b border-gray-300">
+								<div class="flex-shrink-0">
+									<div class="border-3 border-gray-300 text-center items-center flex flex-col justify-center w-16 md:w-20 h-16 md:h-20">
+										<h1 class="text-2xl md:text-3xl font-bold">23</h1>
+										<h2 class="text-xs md:text-sm font-light">2025 05</h2>
+									</div>
+								</div>
+								<div class="ml-4 md:ml-8">
+									<h1 class="text-sm md:text-md font-bold"><span class="text-blue-700">공지사항</span> [중요] 2025 SW중심대학 디지털 경진대회 참가신청 안내 </h1>
+									<p class="text-xs md:text-sm font-light line-clamp-2">컴퓨터공학과 재학생 여러분!! 안녕하십니까! 목원대학교 SW중심대학 사업 책임자 여상수 교수입니다. 2025년 6월부터 우리대학이 SW중심대학 사업에 선정되어 앞으로 6년간 55억 이상의 지원을 받게 되었습니다.</p>
+								</div>
+							</a>
+							<!-- Card 3 -->
+							<a href="#" class="flex w-full pb-4 md:pb-8 border-b border-gray-300">
+								<div class="flex-shrink-0">
+									<div class="border-3 border-gray-300 text-center items-center flex flex-col justify-center w-16 md:w-20 h-16 md:h-20">
+										<h1 class="text-2xl md:text-3xl font-bold">20</h1>
+										<h2 class="text-xs md:text-sm font-light">2025 05</h2>
+									</div>
+								</div>
+								<div class="ml-4 md:ml-8">
+									<h1 class="text-sm md:text-md font-bold"><span class="text-blue-700">공지사항</span> [필독] 2025년 SW아카데미사업 종료! 웹프론트엔드과정 마지막 신청 받습니다! </h1>
+									<p class="text-xs md:text-sm font-light line-clamp-2">컴퓨터공학과 재학생 여러분!! 학과장 여상수 교수입니다. 목원대 대학기업협력형 SW아카데미사업이 올해로 끝이납니다. 마지막 교육생 모집입니다. 많은 관심과 신청바랍니다.</p>
+								</div>
+							</a>
+							<!-- Card 4 -->
+							<a href="#" class="flex w-full pb-4 md:pb-8 border-b border-gray-300">
+								<div class="flex-shrink-0">
+									<div class="border-3 border-gray-300 text-center items-center flex flex-col justify-center w-16 md:w-20 h-16 md:h-20">
+										<h1 class="text-2xl md:text-3xl font-bold">12</h1>
+										<h2 class="text-xs md:text-sm font-light">2025 05</h2>
+									</div>
+								</div>
+								<div class="ml-4 md:ml-8">
+									<h1 class="text-sm md:text-md font-bold"><span class="text-blue-700">공지사항</span> ** 배리어프리 앱개발 콘테스트 ** 주최: 현대오토에버,서울사회복지공동모금회 / 주관: 사단법인 그린라이트 </h1>
+									<p class="text-xs md:text-sm font-light line-clamp-2">컴퓨터공학과 재학생 여러분!! 대학생 공모전 '배리어프리 앱개발 콘테스트'는 현대오토에버와 서울사회복지공동모금회가 지원, 사단법인 그린라이트가 주관, 과학기술정보통신부와 교육부 산하 국립특수교육원이 후원하여 사회취약계층의 이동 및 생활 편의를 증진하기 위해 대학생들이 직접 앱을 기획하고 제작할 수 있도록 지원하고 있습니다.</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w-full md:w-[40%] bg-cover bg-center" style="background-image: url('./images//background__rg.png');">
+				<div class="pt-8 md:pt-16 pl-4 md:pl-14">
+					<h1 class="text-white text-2xl md:text-3xl font-medium">컴퓨터공학과</h1>
+					<p class="text-gray-400 text-xs md:text-sm mt-4 leading-6 w-full md:w-[60%]">
+						우리학과는 4차산업혁명의 핵심기술인 컴퓨팅 기초이론을 비롯하여 IoT, 클라우드, 빅데이터, 인공지능, 정보보호, 멀티미디어 그래픽등에 관련된 이론과 실습을 병행하여 현장적응 능한 인재를 육성합니다.​
+					</p>
+					<!-- Update button groups to be responsive -->
+					<div class="w-full md:w-[80%] mt-6 md:mt-10 text-white">
+						<div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+							<a href="#" class="flex hover:bg-[#4261d9] hover:text-white hover:border-[#4261d9] transition-all duration-300 w-full md:w-1/2 px-4 py-3 border border-white justify-between items-center">
+								<i class="fa-solid fa-file-pen"></i>
+								<p class="text-sm">교과과정</p>
+								<p>></p>
+							</a>
+							<a href="#" class="flex w-full md:w-1/2 px-4 py-3 border hover:bg-[#4261d9] hover:text-white hover:border-[#4261d9] transition-all duration-300 border-white justify-between items-center">
+								<i class="fa-solid fa-book"></i>
+								<p class="text-sm">교과목소개</p>
+								<p>></p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		</section>
+		<!-- FAB -->
+		<div class="fixed bottom-4 right-4 flex flex-col items-end space-y-3 z-50">
+			<!-- Nút Chat -->
+			<button class="bg-white font-bold	  text-gray-700 p-2 rounded-full shadow-lg text-sm">
+				주요 <br>
+				서비스
+			</button>
+
+			<!-- Nút Thêm -->
+			<button class="bg-white  text-gray-700 h-13 w-13 font-bold rounded-full shadow-lg text-sm">
+				학사
+			</button>
+
+			<!-- Nút Lên đầu -->
+			<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+				class="bg-gray-700 hover:bg-gray-800 text-white h-13 w-13 font-bold rounded-full shadow-lg">
+				<i class="fa-solid fa-arrow-up"></i>
+			</button>
+		</div>
+
 	</main>
-	<section>
-		<div class="container">
-			<h2>섹션1</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
-		<section>
-		<div class="container">
-			<h2>섹션2</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<h2>섹션3</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<h2>섹션4</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
-	<footer>
-		<div class="container">
-			<p>© 2023 김똘똘. All rights reserved.</p>
-			//TODO: 본인의 닉네임, 이메일 주소, 저작권 표시 등을 작성하세요.
-			//FIXME: 특히, 가져온 그림에 대한 저작권 표시를 반드시 작성하세요.
+	<footer class="h-60 bg-gray-800 ">
+		<div class="max-w-5xl mx-auto ">
+			<div class="flex justify-between items-center py-6 border-b border-gray-700">
+				<div class="flex space-x-4 text-gray-400 text-sm font-medium">
+					<a href="https://www.mokwon.ac.kr/kr/html/sub09/090501.html">개인정보처리방침</a>
+					<p>.</p>
+					<a href="https://www.mokwon.ac.kr/kr/html/sub09/0906.html">이메일무단수집거부</a>
+					<p>.</p>
+					<a href="https://www.academyinfo.go.kr/popup/pubinfo1690/list.do?schlId=0000112">대학정보공시</a>
+					<p>.</p>
+					<a href="https://www.mokwon.ac.kr/kr/html/sub05/050602.html">오시는길</a>
+				</div>
+
+				<!-- right -->
+				<div class="flex justify-end items-center space-x-4 pr-8 text-gray-400">
+					<a href="https://blog.naver.com/mokwon_univ">
+						<i class="fa-brands fa-blogger-b"></i>
+					</a>
+					<a href="https://www.facebook.com/mokwon.univ">
+						<i class="fa-brands fa-facebook  "></i>
+					</a>
+					<a href="https://www.youtube.com/c/mokwonuniv">
+
+						<i class="fa-brands fa-youtube"></i>
+					</a>
+					<a href="https://pf.kakao.com/_yhxksT">
+						<i class="fa-brands fa-whatsapp"></i>
+					</a>
+				</div>
+			</div>
+
+			<div class="text-gray-400 text-sm mt-16  ">
+				<div class="flex space-x-4 font-medium">
+					<p>[35349 ] 대전광역시 서구 도안북로 88(도안동, 목원대학교) 공학관(D) 3층 D328호</p>
+					<p>Tel. 042-829-7630</p>
+					<p> Fax. 042-822-8431</p>
+				</div>
+				<div class="flex space-x-4 font-light text-gray-500 mt-4">
+					<p class="uppercase">copyright© 2020 mokwon university. all rights reserved.</p>
+				</div>
+			</div>
+
 		</div>
 	</footer>
+
+	<!-- Mobile menu -->
+	<div class="md:hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden" id="mobile-menu-overlay">
+		<div class="bg-white h-full w-64 transform -translate-x-full transition-transform duration-300" id="mobile-menu">
+			<div class="p-4 border-b flex justify-between items-center">
+				<img class="h-8" src="./images/black_logo.png" alt="logo">
+				<button id="close-mobile-menu" class="text-gray-500 hover:text-gray-700">
+					<i class="fa-solid fa-times"></i>
+				</button>
+			</div>
+			<nav class="p-4">
+				<ul class="space-y-4">
+					<li><a href="#" class="block py-2 text-gray-700 hover:text-[#d9203a] text-base">학교안내</a></li>
+					<li><a href="#" class="block py-2 text-gray-700 hover:text-[#d9203a] text-base">교수소개</a></li>
+					<li><a href="#" class="block py-2 text-gray-700 hover:text-[#d9203a] text-base">학사안내</a></li>
+					<li><a href="#" class="block py-2 text-gray-700 hover:text-[#d9203a] text-base">특성화사업</a></li>
+					<li><a href="#" class="block py-2 text-gray-700 hover:text-[#d9203a] text-base">학생황동</a></li>
+					<li><a href="#" class="block py-2 text-gray-700 hover:text-[#d9203a] text-base">커뮤니티</a></li>
+				</ul>
+				<div class="mt-8 space-y-4">
+					<a href="#" class="flex items-center text-gray-700 hover:text-[#d9203a] text-base">
+						<i class="fa-regular fa-user mr-2"></i>
+						<span>로그인</span>
+					</a>
+					<a href="#" class="flex items-center text-gray-700 hover:text-[#d9203a] text-base">
+						<i class="fa-solid fa-school mr-2"></i>
+						<span>교내사이트</span>
+					</a>
+				</div>
+			</nav>
+		</div>
+	</div>
+
 	<script src="./js/main.js"></script>
 </body>
 

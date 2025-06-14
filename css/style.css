@@ -1,5 +1,150 @@
-@
-
-* {
-	
+.back_groud {
+    background-image: url('../images/back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000;
 }
+
+.text{
+    color: #fff;
+}
+
+.white_logo {
+    display: block;
+}
+
+.black_logo {               
+    display: none;
+}
+.menu_container{
+    display: none;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+}
+
+.hover_header:hover{
+   background-color: #fff;
+}
+.hover_header:hover .black_logo{
+    display: block;
+ }
+ .hover_header:hover .white_logo{
+    display: none;
+ }
+ .hover_header:hover .text{
+    color: #000;
+ }
+ .hover_header:hover .menu_container{
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+ }  
+.text1:hover a,
+.text2:hover a,
+.text3:hover a,
+.text4:hover a,
+.text5:hover a,
+.text6:hover a {
+    color: #CD002D !important;
+    transition: color 0.3s ease;
+}
+
+.menu_container h4,
+.text1 a,
+.text2 a,
+.text3 a,
+.text4 a,
+.text5 a,
+.text6 a {
+    transition: color 0.3s ease;
+}
+
+.text1:hover ~ .menu_container h4:nth-child(1),
+.text2:hover ~ .menu_container h4:nth-child(2),
+.text3:hover ~ .menu_container h4:nth-child(3),
+.text4:hover ~ .menu_container h4:nth-child(4),
+.text5:hover ~ .menu_container h4:nth-child(5),
+.text6:hover ~ .menu_container h4:nth-child(6) {
+    color: #CD002D !important;
+}
+
+.menu-item a,
+.menu-title,
+.menu-section {
+    transition: all 0.3s ease;
+}
+
+/* Hover effect cho menu items */
+.menu-item:hover a {
+    color: #CD002D !important;
+}
+
+/* Hover effect cho header menu items */
+.header-menu-item {
+    transition: all 0.3s ease;
+}
+
+.header-menu-item a {
+    transition: all 0.3s ease;
+}
+
+.header-menu-item:hover a {
+    color: #000000;
+}
+
+.header-menu-item:hover i {
+    color: #000000;
+}
+
+.header-menu-item:hover p {
+    color: #000000;
+}
+
+/* Hover effect cho menu sections */
+.menu-section:hover {
+    background-color: #fff !important;
+}
+
+.menu-section:hover .menu-title {
+    color: #CD002D !important;
+}
+
+/* Hover effect cho menu titles */
+.menu-title:hover {
+    color: #CD002D !important;
+    cursor: pointer;
+}
+
+/* Hover effect cho menu titles khi hover vào menu items */
+.hover_header:hover .menu-item[data-menu="1"]:hover ~ .menu_container .menu-section[data-section="1"],
+.hover_header:hover .menu-item[data-menu="2"]:hover ~ .menu_container .menu-section[data-section="2"],
+.hover_header:hover .menu-item[data-menu="3"]:hover ~ .menu_container .menu-section[data-section="3"],
+.hover_header:hover .menu-item[data-menu="4"]:hover ~ .menu_container .menu-section[data-section="4"],
+.hover_header:hover .menu-item[data-menu="5"]:hover ~ .menu_container .menu-section[data-section="5"],
+.hover_header:hover .menu-item[data-menu="6"]:hover ~ .menu_container .menu-section[data-section="6"] {
+    background-color: #fff !important;
+}
+
+.hover_header:hover .menu-item[data-menu="1"]:hover ~ .menu_container .menu-title[data-title="1"],
+.hover_header:hover .menu-item[data-menu="2"]:hover ~ .menu_container .menu-title[data-title="2"],
+.hover_header:hover .menu-item[data-menu="3"]:hover ~ .menu_container .menu-title[data-title="3"],
+.hover_header:hover .menu-item[data-menu="4"]:hover ~ .menu_container .menu-title[data-title="4"],
+.hover_header:hover .menu-item[data-menu="5"]:hover ~ .menu_container .menu-title[data-title="5"],
+.hover_header:hover .menu-item[data-menu="6"]:hover ~ .menu_container .menu-title[data-title="6"] {
+    color: #CD002D !important;
+}
+
+@media (max-width: 768px) {
+  .back_groud {
+    height: 55vh; /* hoặc 50vh, tuỳ bạn muốn ngắn cỡ nào */
+    min-height: 320px; /* đảm bảo không quá nhỏ */
+  }
+}
+
+
+
