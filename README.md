@@ -2,7 +2,7 @@
 # 웹화면구현 파이널 프로젝트
 
 ### 컴퓨터공학과 버칸린
-> 배포된 웹사이트 주소 : [https://mokwon-clone.vercel.app](https://mokwon-clone.vercel.app)
+> 배포된 웹사이트 주소 : [https://linhdev952001.github.io/FE25Fin-Linhdev952001/](https://www.mokwon.ac.kr/computer/)
 
 ### 파이널 프로젝트 요약
 
@@ -20,7 +20,7 @@
 6. **CSS 스타일링**: Tailwind와 커스텀 CSS로 스타일 적용
 7. **JavaScript 기능 구현**: 메뉴 호버, 모바일 메뉴, 맨 위로 이동 등 구현
 8. **테스트 및 디버깅**: 크롬 개발자 도구로 반응형 및 기능 테스트
-9. **배포**: Vercel을 통해 무료 배포
+9. **배포**: GitHub을 통해 무료 배포
 10. **제출**: GitHub Classroom에 제출
 
 #### 프로젝트 진행하면서 가장 어려웠던 점
