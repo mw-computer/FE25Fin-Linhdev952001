@@ -2,7 +2,7 @@
 # 웹화면구현 파이널 프로젝트
 
 ### 컴퓨터공학과 버칸린
-> 배포된 웹사이트 주소 : [https://linhdev952001.github.io/FE25Fin-Linhdev952001/](https://www.mokwon.ac.kr/computer/)
+> 배포된 웹사이트 주소 : [https://linhdev952001.github.io/FE25Fin-Linhdev952001/](https://linhdev952001.github.io/FE25Fin-Linhdev952001/)
 
 ### 파이널 프로젝트 요약
 
